@@ -1,0 +1,34 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 0,
+    "applicationType": "gateway",
+    "applications": {
+      "invoice": {
+        "applicationIndex": 2,
+        "serverPort": "8082"
+      },
+      "product": {
+        "applicationIndex": 1,
+        "serverPort": "8081"
+      }
+    },
+    "authenticationType": "oauth2",
+    "baseName": "store",
+    "buildTool": "gradle",
+    "cacheProvider": "hazelcast",
+    "clientFramework": "react",
+    "devServerPort": 9060,
+    "entities": ["Customer", "Product", "ProductCategory", "ProductOrder", "OrderItem", "Invoice", "Shipment"],
+    "jhipsterVersion": "8.6.0",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1721851229000,
+    "nativeLanguage": "en",
+    "packageFolder": "com/okta/demo/store",
+    "packageName": "com.okta.demo.store",
+    "prodDatabaseType": "postgresql",
+    "reactive": true,
+    "serverPort": 8080,
+    "serviceDiscoveryType": "consul",
+    "skipUserManagement": true
+  }
+}

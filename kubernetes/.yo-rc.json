@@ -1,0 +1,21 @@
+{
+  "generator-jhipster": {
+    "appsFolders": ["store", "invoice", "product"],
+    "clusteredDbApps": [],
+    "dbRandomPassword": "23c7d6a6b4d66b4530091129cf92c047c542bd1c74b257f9b86db472ce2f",
+    "deploymentType": "kubernetes",
+    "directoryPath": "../",
+    "dockerPushCommand": "docker push",
+    "dockerRepositoryName": "indiepopart",
+    "ingressDomain": "",
+    "istio": false,
+    "jhipsterVersion": "8.6.0",
+    "jwtSecretKey": "NWU1YTIyMzY0OWUwZDEwYmQ5Njk4NGNmZWUwMjRjOTIzM2QyMDhhNDM3YmYxYjUwYjFlYzkxMTUzYWRhMjNmNmJhZDUzNTA4ODExYWJkZjk4ZjA1ZmRhMThiZDJkMjZhM2NlNg==",
+    "kubernetesNamespace": "jhipster",
+    "kubernetesServiceType": "LoadBalancer",
+    "kubernetesStorageClassName": "",
+    "kubernetesUseDynamicStorage": false,
+    "monitoring": "no",
+    "serviceDiscoveryType": "consul"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 2,
+    "applicationType": "microservice",
+    "authenticationType": "oauth2",
+    "baseName": "invoice",
+    "buildTool": "gradle",
+    "entities": ["Invoice", "Shipment"],
+    "jhipsterVersion": "8.6.0",
+    "jwtSecretKey": "NmNlMzgzNmIzMTI1NWY1YmU0OTkzMmU5ZTY3MTMxZDc1NDBjYzg1Yjc0YzlhM2U4ZmVmZjUxYjhhODI3MjI1NTg2YTFhMjljM2ZlZTE4ODRmY2U2YjI1OTQ0M2VlNjk0MTY0MWUzYmU0NWFhZTMzY2U4NDI3YTM0ZmY5NmFiY2Q=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1721850929000,
+    "nativeLanguage": "en",
+    "packageFolder": "com/okta/demo/invoice",
+    "packageName": "com.okta.demo.invoice",
+    "prodDatabaseType": "postgresql",
+    "serverPort": "8082",
+    "serviceDiscoveryType": "consul",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
