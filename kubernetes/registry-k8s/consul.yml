@@ -113,10 +113,9 @@ spec:
                     app: consul
                 namespaces:
                   - jhipster
-                topologyKey: kubernetes.io/hostname
+                topologyKey: topology.kubernetes.io/zone
               weight: 1
         nodeAffinity:
-
       securityContext:
         fsGroup: 1001
       containers:

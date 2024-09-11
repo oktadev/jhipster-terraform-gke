@@ -74,9 +74,6 @@ spec:
             - name: SERVER_SHUTDOWN
               value: graceful
           resources:
-            requests:
-              memory: "512Mi"
-              cpu: "500m"
             limits:
               memory: "1Gi"
               cpu: "1"
@@ -87,7 +84,7 @@ spec:
             httpGet:
               path: /management/health/readiness
               port: http
-            initialDelaySeconds: 20
+            initialDelaySeconds: 120
             periodSeconds: 15
             failureThreshold: 6
           livenessProbe:

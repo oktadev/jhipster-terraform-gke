@@ -30,19 +30,14 @@ resource "google_compute_subnetwork" "default" {
 
 resource "google_container_cluster" "default" {
   project = var.project_id
-  name    = "example-cluster"
+  name    = "example-autopilot-cluster"
 
   location                 = var.location
+  enable_autopilot         = true
   enable_l4_ilb_subsetting = true
-  initial_node_count       = 2
-  datapath_provider        = "ADVANCED_DATAPATH"
 
   network    = google_compute_network.default.id
   subnetwork = google_compute_subnetwork.default.id
-
-  node_config {
-    machine_type = "e2-standard-2"
-  }
 
   ip_allocation_policy {
     stack_type                    = "IPV4_IPV6"
@@ -54,4 +49,3 @@ resource "google_container_cluster" "default" {
   # accidentally delete this instance by use of Terraform.
   deletion_protection = false
 }
-
