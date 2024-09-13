@@ -104,39 +104,8 @@ terraform output auth0_webapp_client_id
 terraform output auth0_webapp_client_secret
 ```
 
-Update `kubernetes/registry-k8s/application-configmap.yml` with the OIDC configuration from above.
+Update `kubernetes/registry-k8s/application-configmap.yml` with the OIDC configuration from above, replacing `<your-auth0-domain>`, `<client-id>` and `<client-secret>`.
 
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: application-config
-  namespace: jhipster
-#common configuration shared between all applications
-data:
-  application.yml: |-
-    configserver:
-      ...
-    jhipster:
-      security:
-        ...
-        oauth2:
-          audience:
-            - https://<your-auth0-domain>/api/v2/
-    spring:
-      security:
-        oauth2:
-          client:
-            provider:
-              oidc:
-                # make sure to include the trailing slash
-                issuer-uri: https://<your-auth0-domain>/
-            registration:
-              oidc:
-                client-id: <client-id>
-                client-secret: <client-secret>
-  # app specific configuration
-```
 
 ## Deploy the microservice stack to AKS
 
