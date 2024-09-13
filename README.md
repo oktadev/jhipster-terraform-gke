@@ -37,6 +37,13 @@ provider "auth0" {
 }
 ```
 
+Set the `google-project-id` in the file `terraform/terraform.tfvars`:
+
+```terraform
+# terraform/terraform.tfvars
+project_id = "<google-project-id>"
+```
+
 Now before we can run the scripts we need to create a machine to machine application in Auth0 so that Terraform can communicate with the Auth0 management API. This can be done using the Auth0 CLI. Please note that you also need to have [jq](https://jqlang.github.io/jq/) installed to run the below commands. Run the following commands to create an application after logging into the CLI with the `auth0 login` command:
 
 ```bash
@@ -81,10 +88,10 @@ terraform apply main.tfplan
 The complete provisioning of all resources will take while. Once the AKS cluster is ready, you will see the output variables printed on the console. Get the cluter credentials with the following command:
 
 ```bash
-gcloud container clusters get-credentials <kubernetes-cluster-name> --location us-east1
+gcloud container clusters get-credentials example-autopilot-cluster --location us-east1
 ```
 
-You should see the cluster details if you run `kdash` or `kubectl get nodes` commands.
+As it is autopilot, if you run `kdash` or `kubectl get nodes` commands, you won't see cluster nodes or workloads yet.
 
 ## Set up OIDC authentication using Auth0
 
@@ -92,9 +99,9 @@ First get the client ID and secret for the Auth0 application created by Terrafor
 
 ```bash
 # Client ID
-terraform output --json | jq -r '.auth0_webapp_client_id.value'
+terraform output auth0_webapp_client_id
 # Client Secret
-terraform output --json | jq -r '.auth0_webapp_client_secret.value'
+terraform output auth0_webapp_client_secret
 ```
 
 Update `kubernetes/registry-k8s/application-configmap.yml` with the OIDC configuration from above.
@@ -148,12 +155,14 @@ cd kubernetes
 ./kubectl-apply.sh -f
 ```
 
+> **Note**: GKE Autopilot will return warnings if the container spec does not specify 'cpu' resource.
+
 Once the deployments are done, we must wait for the pods to be in **RUNNING** status.
 
-As the Ingress controller requires the inbound traffic to be for the host `store.example.com`, you can test the store service by adding an entry in your _hosts_ file that maps to the gateway public IP:
+As the Ingress controller requires the inbound traffic to be for the host `store.example.com`, you can test the store service by adding an entry in your _hosts_ file that maps to the `store-ingress` public IP:
 
 ```shell
-terraform output spoke_pip
+kubectl get ingress -n jhipster
 ```
 
 Then navigate to `http://store.example.com` and sign in at Atuh0 with the test user/password jhipster@test.com/passpass$12$12.
