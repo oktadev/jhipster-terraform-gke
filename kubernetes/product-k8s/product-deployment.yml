@@ -46,7 +46,7 @@ spec:
               done
       containers:
         - name: product-app
-          image: indiepopart/product
+          image: your-docker-repo/product
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: prod

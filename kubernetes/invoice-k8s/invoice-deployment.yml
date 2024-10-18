@@ -46,7 +46,7 @@ spec:
               done
       containers:
         - name: invoice-app
-          image: indiepopart/invoice
+          image: your-docker-repo/invoice
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: prod

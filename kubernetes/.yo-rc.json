@@ -6,7 +6,7 @@
     "deploymentType": "kubernetes",
     "directoryPath": "../",
     "dockerPushCommand": "docker push",
-    "dockerRepositoryName": "indiepopart",
+    "dockerRepositoryName": "your-docker-repo",
     "ingressDomain": "",
     "istio": false,
     "jhipsterVersion": "8.6.0",

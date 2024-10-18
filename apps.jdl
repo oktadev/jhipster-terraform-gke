@@ -182,7 +182,7 @@ microservice Invoice, Shipment with invoice
 deployment {
   deploymentType kubernetes
   appsFolders [store, invoice, product]
-  dockerRepositoryName "indiepopart" // @Replace With Your Docker repo name@
+  dockerRepositoryName "your-docker-repo" // @Replace With Your Docker repo name@
   serviceDiscoveryType consul
   kubernetesServiceType LoadBalancer
   kubernetesNamespace jhipster

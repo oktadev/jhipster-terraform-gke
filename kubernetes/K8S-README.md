@@ -5,12 +5,12 @@
 You will need to push your image to a registry. If you have not done so, use the following commands to tag and push the images:
 
 ```
-$ docker image tag store indiepopart/store
-$ docker push indiepopart/store
-$ docker image tag invoice indiepopart/invoice
-$ docker push indiepopart/invoice
-$ docker image tag product indiepopart/product
-$ docker push indiepopart/product
+$ docker image tag store your-docker-repo/store
+$ docker push your-docker-repo/store
+$ docker image tag invoice your-docker-repo/invoice
+$ docker push your-docker-repo/invoice
+$ docker image tag product your-docker-repo/product
+$ docker push your-docker-repo/product
 ```
 
 ## Deployment

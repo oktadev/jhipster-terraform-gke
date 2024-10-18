@@ -2,13 +2,13 @@ apiVersion: skaffold/v1
 kind: Config
 build:
   artifacts:
-    - image: indiepopart/store
+    - image: your-docker-repo/store
       context: ../store
       jib: {}
-    - image: indiepopart/invoice
+    - image: your-docker-repo/invoice
       context: ../invoice
       jib: {}
-    - image: indiepopart/product
+    - image: your-docker-repo/product
       context: ../product
       jib: {}
   tagPolicy:
